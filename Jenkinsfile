@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh('ls -lah')
-                echo 'Building..'
+                sh('mkdir photos && rsync /opt/photos ./photos')
+                sh('docker build . -t fgallery-slideshow:latest')
             }
         }
         stage('Test') {
