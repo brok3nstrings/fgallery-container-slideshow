@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                run "ls -lah"
+                sh('ls -lah')
                 echo 'Building..'
             }
         }
