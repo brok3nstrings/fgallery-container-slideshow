@@ -6,11 +6,11 @@ RUN apt-get -y install git imagemagick exiftran zip liblcms2-utils libimage-exif
 
 #COPY ./fgallery-LATEST.zip .
 #RUN unzip fgallery-LATEST.zip
-WORKDIR /fgallery
-RUN "ls -lah"
+#WORKDIR /fgallery
+#RUN "ls -lah"
 RUN git clone https://github.com/brok3nstrings/fgallery-slideshow.git
-RUN "ls -lah"
-COPY ./photos ./photos
+#RUN "ls -lah"
+COPY /home/jenkins/photos ./photos
 
 RUN wget --no-check-certificate https://github.com/wavexx/facedetect/archive/master.zip
 RUN unzip -p master.zip facedetect-master/facedetect > /usr/bin/facedetect
