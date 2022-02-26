@@ -2,7 +2,7 @@ FROM minio/mc AS s3copy
 ARG MINIO_HOST
 ARG BUCKET
 
-RUN cp ${MINIO_HOST}:7001/${BUCKET}/* ./photos
+RUN cp {MINIO_HOST}:7001/{BUCKET}/* ./photos
 
 FROM ubuntu:xenial AS build
 
